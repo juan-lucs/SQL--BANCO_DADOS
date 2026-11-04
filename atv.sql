@@ -5,3 +5,11 @@ SELECT ra_aluno, id_turma, nota FROM Matricula WHERE nota IS NULL;
 SELECT TOP (5) ra_aluno, nota FROM Matricula WHERE nota IS NOT NULL ORDER BY nota DESC;
 SELECT * FROM dbo.Pagamento WHERE situacao = 'PENDENTE' ORDER BY data_vencimento;
 SELECT * FROM Turma WHERE turno = 'NOITE' ORDER BY carga_horaria DESC
+
+SELECT ra, nome, UPPER(nome) FROM Aluno;
+SELECT ra, nome, LOWER(email) FROM Aluno;
+SELECT nome, UPPER(cidade), LOWER(uf) FROM Aluno;
+SELECT TOP (5) nome, LEN(nome) FROM Aluno ORDER BY LEN(nome);
+SELECT LEFT(nome, 3), nome FROM Aluno;
+SELECT email, LEFT(email, 6) FROM Aluno;
+SELECT LEFT(nome, 1) AS LETRA_INICIAL, COUNT(*) AS total_Alunos  FROM Aluno GROUP BY LEFT(nome, 1) ORDER BY total_Alunos DESC;
