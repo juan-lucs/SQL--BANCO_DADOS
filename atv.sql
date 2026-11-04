@@ -4,3 +4,4 @@ SELECT * FROM Aluno WHERE uf = 'SC' AND idade >= 20 AND idade <= 24 ORDER BY ida
 SELECT ra_aluno, id_turma, nota FROM Matricula WHERE nota IS NULL;
 SELECT TOP (5) ra_aluno, nota FROM Matricula WHERE nota IS NOT NULL ORDER BY nota DESC;
 SELECT * FROM dbo.Pagamento WHERE situacao = 'PENDENTE' ORDER BY data_vencimento;
+SELECT * FROM Turma WHERE turno = 'NOITE' ORDER BY carga_horaria DESC
