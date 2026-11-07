@@ -37,3 +37,21 @@ SELECT id_turma , COUNT(ra_aluno ) AS qantidade_naturma FROM Matricula GROUP BY 
 SELECT ROUND(AVG(nota),2), id_turma FROM Matricula GROUP BY id_turma;
 SELECT id_turma, ROUND(AVG(nota),2), COUNT(*) AS notas_lançadas FROM Matricula GROUP BY id_turma HAVING ROUND(AVG(nota),2) >= 7;
 SELECT top (3) id_turma , COUNT(ra_aluno ) FROM  Matricula GROUP BY id_turma;
+
+INSERT INTO Aluno (ra, nome, idade, email) VALUES (2999, 'Aluno Laboratorio', 22, 'laboratorio2999@exemplo.edu.br');
+
+SELECT * FROM Aluno WHERE ra = 2999;
+
+UPDATE Aluno SET nome = UPPER(nome) WHERE ra = 2999;
+
+UPDATE Aluno SET idade = 23, cidade = 'Joinville', uf = 'SC' WHERE ra = 2999;
+
+INSERT INTO Matricula (ra_aluno, id_turma, nota) VALUES (2999, 80, NULL);
+
+UPDATE Matricula SET nota = 8.75 WHERE ra_aluno = 2999 AND id_turma = 80;
+
+SELECT * FROM Matricula WHERE ra_aluno = 2999 AND id_turma = 80;
+
+DELETE FROM Aluno WHERE ra = 2999;
+
+SELECT * FROM Aluno WHERE ra = 2999;
