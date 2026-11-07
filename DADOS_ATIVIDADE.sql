@@ -10,7 +10,7 @@ GO
 
 -- 2. LIMPAR APENAS AS TABELAS DE TREINAMENTO
 -- Ordem importa: Matricula depende de Aluno e Turma.
-DROP TABLE IF EXISTS dbo.Pagamento;
+
 DROP TABLE IF EXISTS dbo.Matricula;
 DROP TABLE IF EXISTS dbo.Turma;
 DROP TABLE IF EXISTS dbo.Aluno;
