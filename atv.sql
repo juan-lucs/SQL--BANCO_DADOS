@@ -22,3 +22,18 @@ SELECT nome, data_nascimento FROM Aluno WHERE MONTH(data_nascimento) = 3;
 SELECT TOP (5) * FROM Aluno ORDER BY YEAR(data_nascimento);
 SELECT YEAR(data_nascimento) AS ano_nascimento,COUNT(*) AS nascidos FROM Aluno GROUP BY YEAR(data_nascimento);
 SELECT YEAR(data_nascimento) AS ANO_NASCIMENTO, COUNT(*) AS nascidos FROM Aluno GROUP BY YEAR(data_nascimento) HAVING COUNT(*) >= 2;
+
+
+SELECT COUNT(ra_aluno) AS alunos_cadastrados FROM Matricula
+SELECT COUNT(*) AS alunos_cadastrados, COUNT(nota) AS nota_lancada, COUNT(*) - COuNT(nota) AS  nota_faltante FROM  MATRICULA
+SELECT MIN(nota), MAX(nota), ROUND(AVG(nota),2) FROM Matricula;
+SELECT ROUND(AVG(CAST(nota AS FLOAT)), 2) FROM Matricula;
+SELECT SUM(nota) FROM Matricula WHERE id_turma = 10;
+SELECT SUM(nota) FROM Matricula WHERE id_turma = 10;
+SELECT situacao, COUNT(*) AS quantidade_pagamentos FROM Pagamento GROUP BY situacao;
+SELECT situacao, COUNT(*) AS total FROM Pagamento WHERE situacao = 'PAGO' GROUP BY situacao;
+SELECT situacao, MIN(valor), max(valor)  FROM Pagamento GROUP BY situacao;
+SELECT id_turma , COUNT(ra_aluno ) AS qantidade_naturma FROM Matricula GROUP BY id_turma;
+SELECT ROUND(AVG(nota),2), id_turma FROM Matricula GROUP BY id_turma;
+SELECT id_turma, ROUND(AVG(nota),2), COUNT(*) AS notas_lançadas FROM Matricula GROUP BY id_turma HAVING ROUND(AVG(nota),2) >= 7;
+SELECT top (3) id_turma , COUNT(ra_aluno ) FROM  Matricula GROUP BY id_turma;
