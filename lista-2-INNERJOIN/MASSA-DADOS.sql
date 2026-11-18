@@ -19,3 +19,9 @@ SELECT COUNT(id_matricula) as total_matricula, COUNT(nota) as notas_lancadas, CO
 
 --questao6
 SELECT id_turma, COUNT(id_matricula) as total FROM Matricula GROUP BY id_turma HAVING  COUNT(id_matricula) >= 4 ORDER BY total desc 
+
+--questao7
+INSERT INTO Aluno (ra, nome, idade, cidade, email, data_nascimento, data_cadastro) VALUES(1099, 'Marina Lopes', 22, 'Blumenau','MARINA@EXEMPLO.COM', '2003-04-20','2026-11-20')
+--questao8
+DELETE FROM Pagamento WHERE id_pagamento = 9007;
+UPDATE Pagamento SET valor = 150.00 WHERE id_pagamento = 9002;
