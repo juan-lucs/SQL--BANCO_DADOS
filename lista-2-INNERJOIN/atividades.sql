@@ -19,3 +19,23 @@ SELECT COUNT(id_matricula) as total_matricula, COUNT(nota) as notas_lancadas, CO
 
 --questao6
 SELECT id_turma, COUNT(id_matricula) as total FROM Matricula GROUP BY id_turma HAVING  COUNT(id_matricula) >= 4 ORDER BY total desc 
+
+--questão 7
+INSERT INTO dbo.Aluno (ra, nome, idade, cidade, email, data_nascimento, data_cadastro) 
+VALUES (1099, 'Marina Lopes' , 22, 'Blumenau', 'MARINA@EXEMPLO.COM','2003/04/20',  '2026/11/20')
+UPDATE dbo.Aluno SET idade = 23, cidade = 'Joinville' WHERE ra = 1099;
+
+--questão 8 
+UPDATE dbo.Pagamento SET valor = 150.00, data_pagamento = '2026/11/20', situacao = 'Pago' WHERE id_pagamento = 9002;
+DELETE  dbo.Pagamento Where id_pagamento = 9007;
+
+--questão 9
+CREATE TABLE dbo.Monitoria(
+id_monitori INT NOT NULL,
+id_turma INT NOT NULL,
+codigo VARCHAR(20) NOT NULL, 
+hotas int NOT NULL,
+data_inicio DATE NOT NULL, 
+situacao VARCHAR(20) NOT NULL,
+CONSTRAINT PK_ID Primary KEY (id_monitori), 
+);
